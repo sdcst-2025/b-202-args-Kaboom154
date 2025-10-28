@@ -10,5 +10,17 @@ assert addNumbers(2,5,6,10,12,20) == 55
 """
 
 
+
+def addNumbers(*args):
+    
+    for i in args
+        totalSum += i
+
+    print(args)
+
+addNumbers(1,2,3,4,5)
+
+'''
 assert addNumbers(1,2,3,4,5) == 15
 assert addNumbers(2,5,6,10,12,20) == 55
+'''
