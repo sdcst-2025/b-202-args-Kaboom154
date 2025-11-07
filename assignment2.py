@@ -10,6 +10,16 @@ assert myAverage(1,2,5,6,10) == (4.6,5)
 
 """
 
+def myAverage(*args):
+    total = 0
+    sum = 0
+    for i in args:
+        total += 1
+    for i in args:
+        sum += i
+    average = sum / total
+    print(average,total)
+    return average,total
 
 
 
