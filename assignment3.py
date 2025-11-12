@@ -20,6 +20,9 @@ import math
 
 def centralTendency(*args):
     args = list(args)
+    
+    #print("args:",args)
+
     args.sort()
     count = -1
     for i in args:
@@ -28,26 +31,34 @@ def centralTendency(*args):
     medianLow = args[ math.ceil(count/2) ]
     median = (medianHigh+medianLow) / 2
 
-    mode = #put counts into a seperate list, reverse sort list 2
+    #put counts into a seperate list, reverse sort list 2
+    myList = []
+    for i in range(0,count+1):
+        myList.append(args.count(args[i]))
+    
+    #print(f"\n------------------------\ncounters: {myList}\n\nsorted:   {args}\n------------------------\n")
+    
+    myList.sort(reverse=True)
+    
+    #print("counters sorted:",myList2)
+    #print("")
+
+    if myList.count(myList[0]) > myList[0]:
+        mode = "multiple possible modes"
+    elif myList.count(myList[0]) == myList[0]:
+        mode = args[args.index(myList[0])]
+
 
     midpoint = (args[0] + args[count]) / 2
-
 
     print(median,mode,midpoint)
     return median,mode,midpoint
 
 
+print("median, mode, midpoint:")
 centralTendency(1,2,3,4,5,6)
 centralTendency(8, 6, 6, 4, 6, 7, 10, 3, 1, 3, 9, 7, 9, 6, 5, 6, 5, 1, 6, 3)
 centralTendency(5, 5, 8, 10, 4, 7, 5, 6, 9, 9, 5, 4, 7, 7, 3, 8, 2, 3, 5, 9)
-
-
-
-abcd = [8, 6, 6, 4, 6, 7, 10, 3, 1, 3, 9, 7, 9, 6, 5, 6, 5, 1, 6, 3]
-abcd.sort()
-abcd1 = [5, 5, 8, 10, 4, 7, 5, 6, 9, 9, 5, 4, 7, 7, 3, 8, 2, 3, 5, 9]
-abcd1.sort()
-print(f'\n{abcd}\n\n{abcd1}')
 
 
 '''
